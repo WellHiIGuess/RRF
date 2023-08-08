@@ -1,29 +1,27 @@
 use super::{element::Element, js_packet::JSPacket, tag::Tag};
 
-pub struct Button {
-    pub text: String,
-    pub tags: Vec<Tag>,
+pub struct Image { 
+    pub tags: Vec<Tag>
 }
 
-impl Button {
+impl Image {
     #[allow(unused)]
-    pub fn new(text: &str) -> Button {
-        Button {
-            text: text.to_string(),
+    pub fn new() -> Image {
+        Image {
             tags: vec![],
         }
     }
 }
 
-impl Element for Button {
+impl Element for Image {
     fn get_html(&self) -> String {
-        let mut tag_impl= String::new();
+        let mut tag_impl = String::new();
 
         for i in &self.tags {
-            tag_impl += format!(" {}=\"{}\" ", i.name, i.content.replace("\"", "'")).as_str();
+            tag_impl += format!(" {}=\"{}\" ", i.name, i.content).as_str();
         }
 
-        "<button".to_owned() + tag_impl.as_str() + ">" + self.text.as_str() + "</button" + ">"
+        "<img".to_owned() + tag_impl.as_str() + "></img>"
     }
 
     fn add_tag(&mut self, tag: Tag) -> &dyn Element {
@@ -36,3 +34,4 @@ impl Element for Button {
         self
     }
 }
+
