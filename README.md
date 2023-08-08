@@ -39,3 +39,5 @@ Ooga Booga is open source and as well is incomplete so contributing is welcomed!
 
 ## Documentation
 Right now Ooga Booga has no documnetation but you're a programmer you can figure it out. Good luck!
+here's also a discord if you want actual help:
+https://discord.gg/XHfnQCgqPn
