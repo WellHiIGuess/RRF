@@ -32,7 +32,22 @@ async fn route_page() -> impl Responder {
 }
 ```
 
-And tell Actix to serve this function.
+And then tell Actix to serve this function.
+
+## About Action Tags
+When you want to add a tag that has javascript functionality you might want to consider adding an ```action-tag```.
+Action tags don't ship the Javascript you write but instead they ship ship code that retrieves the Javascript so it is only shipped when it is needed.
+example:
+```rust
+use crate::library::page::{page, Page};
+
+pub fn route() -> Page {
+    page(vec![
+        Button::new("click me")
+            .add_action_tag("onclick", JSPacket::new("file.js")),
+    ])
+}
+```
 
 ## Contributing
 Ooga Booga is open source and as well is incomplete so contributing is welcomed!

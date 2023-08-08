@@ -8,7 +8,7 @@ impl Element for Hello {
         Div::new(vec![
             &Paragraph::new("Hello"),
             Button::new("Click me")
-                .add_action_tag("onclikc", JSPacket::new("test.js")),
+                .add_action_tag("onclick", JSPacket::new("test.js")),
         ]).get_html()
     }
 
