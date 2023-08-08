@@ -12,7 +12,7 @@ This will give you a sample project to work with. All of your pages are in the `
 
 To make a new route you will first make a new file in ```/app``` and in it create a function that return a page like so:
 
-```
+```rust
 use crate::library::page::{page, Page};
 
 pub fn route() -> Page {
@@ -25,7 +25,7 @@ pub fn route() -> Page {
 
 You'll notice if you visit this page you still won't be able so see anything because you need to tell Actix to serve this page in the main file:
 
-```
+```rust
 #[get("/route")]
 async fn route_page() -> impl Responder {
     HttpResponse::Ok().body(route().serve())
